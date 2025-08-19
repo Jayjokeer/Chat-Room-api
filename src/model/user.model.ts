@@ -9,11 +9,24 @@ export class User extends Model<IUser> implements IUser {
   public displayName?: string;
   public email!: string;
   public password!: string;
+
+  public static associate(models: any) {
+    User.belongsToMany(models.Room, {
+      through: "UserRooms",
+      foreignKey: "userId",
+    });
+
+    User.hasMany(models.Message, {
+      foreignKey: "userId",
+      as: "messages",
+    });
+  }
 }
 User.init(
   {
     id: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
     },
@@ -24,20 +37,14 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        notNull: { msg: "Password is required" },
-        notEmpty: { msg: "Provide a password" },
-      },
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        notNull: { msg: "Email address required" },
-        isEmail: { msg: "Please provide a valid email" },
-      },
     },
+    lastSeen: { type: DataTypes.DATE, allowNull: true },
+    isOnline: { type: DataTypes.BOOLEAN, defaultValue: false },
   },
     {
     sequelize: db,

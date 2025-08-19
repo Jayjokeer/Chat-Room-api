@@ -1,6 +1,7 @@
 import { DataTypes, Model, Sequelize } from "sequelize";
 import  db  from "../config/database";
-import { IUser } from "../interfaces/user.interface";
+import { IUser } from "../types/user.interface";
+import { toDefaultValue } from "sequelize/types/utils";
 
 
 
@@ -9,6 +10,7 @@ export class User extends Model<IUser> implements IUser {
   public displayName?: string;
   public email!: string;
   public password!: string;
+  public createdAt!: string;
 
   public static associate(models: any) {
     User.belongsToMany(models.Room, {
@@ -45,6 +47,7 @@ User.init(
     },
     lastSeen: { type: DataTypes.DATE, allowNull: true },
     isOnline: { type: DataTypes.BOOLEAN, defaultValue: false },
+    createdAt: {type: DataTypes.DATE, defaultValue: DataTypes.NOW},
   },
     {
     sequelize: db,

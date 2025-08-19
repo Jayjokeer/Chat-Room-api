@@ -1,11 +1,15 @@
 import { DataTypes, Model } from "sequelize";
 import  db  from "../config/database";
-import { IMessage } from "../interfaces/message.interface";
+import { IMessage } from "../types/message.interface";
+import { Room } from "./room.model";
+import { User } from "./user.model";
 
 export class Message extends Model<IMessage> implements IMessage {
   public id!: string;
   public content!: string;
-  public timestamp!: Date;
+  public createdAt!: Date;
+  public userId!: string;
+  public roomId!: string;
 }
 Message.init(
   {
@@ -15,7 +19,21 @@ Message.init(
       primaryKey: true,
     },
     content: { type: DataTypes.TEXT, allowNull: false },
-    timestamp: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
+    createdAt: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
+    roomId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: Room,
+        key: 'id',
+      },
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: User,
+        key: 'id',
+      },
+    },
   },
   { sequelize: db, modelName: "message" }
 );

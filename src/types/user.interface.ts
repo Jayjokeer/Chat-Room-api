@@ -5,4 +5,5 @@ export interface IUser {
     password?: string;
     lastSeen?: Date;
     isOnline?: boolean;
+    createdAt?: string;
 }

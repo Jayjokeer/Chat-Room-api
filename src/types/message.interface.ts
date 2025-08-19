@@ -1,5 +1,7 @@
 export interface IMessage{
     id?: string;
     content?: string;
-    timestamp?: Date;
+    createdAt?: Date;
+    userId: string;
+    roomId: string;
 }

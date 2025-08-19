@@ -1,7 +1,7 @@
 import { Request } from "express";
 import jwt from "jsonwebtoken";
 import { BadRequestError } from "../errors/error";
-import { IUser } from "../interfaces/user.interface";
+import { IUser } from "../types/user.interface";
 
 
 export const generateJWTwithExpiryDate = (

@@ -10,6 +10,6 @@ export const createUser = async (userPayload: any) => {
   return await User.create(userPayload);
 };
 
-export const fetchUserById = async (id: string) => {
+export const fetchUserById = async (id: number) => {
   return await User.findByPk(id);
 };

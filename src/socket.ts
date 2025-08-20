@@ -1,6 +1,6 @@
 import { Server, Socket } from "socket.io";
 import jwt from "jsonwebtoken";
-import { User, Room, Message, RoomMember } from "../src/model/index.model";
+import { User, Room, Message, RoomMember } from "./model/index.model";
 import dotenv from "dotenv";
 dotenv.config();
 

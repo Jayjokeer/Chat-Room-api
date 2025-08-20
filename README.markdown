@@ -1,6 +1,6 @@
 # Chat Room API
 
-A real-time chat application backend built with Node.js, Express, Socket.IO, TypeScript, Sequelize, and MySQL, with Knex.js for database migrations. This API supports user authentication, chat room creation and management, real-time messaging, user presence tracking, and rate limiting for secure and efficient communication. The application is hosted at [https://chat-room-apif.onrender.com](https://chat-room-apif.onrender.com).
+A real-time chat application backend built with Node.js, Express, Socket.IO, TypeScript, Sequelize, and MySQL. This API supports user authentication, chat room creation and management, real-time messaging, user presence tracking, and rate limiting for secure and efficient communication. The application is hosted at [https://chat-room-apif.onrender.com](https://chat-room-apif.onrender.com).
 
 ## Table of Contents
 - [Features](#features)
@@ -11,9 +11,7 @@ A real-time chat application backend built with Node.js, Express, Socket.IO, Typ
   - [Production](#production)
 - [API Endpoints](#api-endpoints)
 - [Socket.IO Events](#socketio-events)
-- [Testing](#testing)
   - [Postman Collection](#postman-collection)
-  - [Client-Side Testing](#client-side-testing)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -94,14 +92,14 @@ Chat-Room-api/
    Create a `.env` file in the root directory with the following:
    ```env
    NODE_ENV=development
-   PORT=4000
-   DB_HOST=br3czu7auorvqxdsgu9t-mysql.services.clever-cloud.com
-   DB_NAME=br3czu7auorvqxdsgu9t
-   DB_USER=unj47mj0vxznwvek
+   PORT=your_port
+   DB_HOST=your_host
+   DB_NAME=your_db_name
+   DB_USER=your_db_username
    DB_PORT=3306
-   DB_PASS=JKMPffsbHyEkSqh0gMeI
-   DB_URI=mysql://unj47mj0vxznwvek:JKMPffsbHyEkSqh0gMeI@br3czu7auorvqxdsgu9t-mysql.services.clever-cloud.com:3306/br3czu7auorvqxdsgu9t
-   JWT_SECRET=super-secret-long-random-string
+   DB_PASS=your_db_password
+   DB_URI=db_url
+   JWT_SECRET=secret
    CORS_ORIGIN=http://localhost:4000
    ```
    **Security Note**: Replace `DB_PASS` and `JWT_SECRET` with secure values for your local setup. For production, set these in your hosting platform (e.g., Render) and avoid committing `.env` to version control.

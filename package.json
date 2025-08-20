@@ -7,10 +7,6 @@
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc",
     "start": "tsc && node dist/app.js",
-    "prisma:push": "prisma db push",
-    "prisma:studio": "prisma studio",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:gen": "prisma generate"
   },
   "keywords": [],
   "author": "",

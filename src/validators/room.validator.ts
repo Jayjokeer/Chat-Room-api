@@ -34,24 +34,3 @@ export const joinRoomSchema = Joi.object({
       "string.alphanum": "Invite code must contain only letters and numbers",
     }),
 });
-
-export const getUserRoomsSchema = Joi.object({
-  page: Joi.number()
-    .integer()
-    .min(1)
-    .default(1)
-    .messages({
-      "number.base": "Page must be a number",
-      "number.min": "Page must be at least 1",
-    }),
-  limit: Joi.number()
-    .integer()
-    .min(1)
-    .max(100)
-    .default(10)
-    .messages({
-      "number.base": "Limit must be a number",
-      "number.min": "Limit must be at least 1",
-      "number.max": "Limit cannot exceed 100",
-    }),
-});

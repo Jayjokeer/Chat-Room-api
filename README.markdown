@@ -1,6 +1,6 @@
 # Chat Room API
 
-A real-time chat application backend built with Node.js, Express, Socket.IO, TypeScript, Sequelize, and MySQL, with Knex.js for database migrations. This API supports user authentication, chat room creation and management, real-time messaging, user presence tracking, and rate limiting for secure and efficient communication. The application is hosted at [https://chat-room-apif.onrender.com](https://chat-room-apif.onrender.com).
+A real-time chat application backend built with Node.js, Express, Socket.IO, TypeScript, Sequelize, and MySQL. This API supports user authentication, chat room creation and management, real-time messaging, user presence tracking, and rate limiting for secure and efficient communication. The application is hosted at [https://chat-room-apif.onrender.com](https://chat-room-apif.onrender.com).
 
 ## Table of Contents
 - [Features](#features)
@@ -11,9 +11,7 @@ A real-time chat application backend built with Node.js, Express, Socket.IO, Typ
   - [Production](#production)
 - [API Endpoints](#api-endpoints)
 - [Socket.IO Events](#socketio-events)
-- [Testing](#testing)
   - [Postman Collection](#postman-collection)
-  - [Client-Side Testing](#client-side-testing)
 - [Contributing](#contributing)
 - [License](#license)
 

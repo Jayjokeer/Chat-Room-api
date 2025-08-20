@@ -1,6 +1,5 @@
-import { Message } from '../model/index.model';
-import { Room } from '../model/room.model';
-import { RoomMember } from '../model/roomMember.model';
+import {Room} from '../model/index.model';
+
 import { IRoom } from '../types/room.interface';
 
 

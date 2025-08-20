@@ -1,4 +1,4 @@
-import { User } from '../model/user.model';
+import { User } from '../model/index.model';
 
 export const checkEmailExists = async (email: string) => {
   return await User.findOne({

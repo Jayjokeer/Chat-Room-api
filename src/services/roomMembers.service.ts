@@ -1,5 +1,4 @@
-import { Message, Room, User } from '../model/index.model';
-import { RoomMember } from '../model/roomMember.model';
+import { Room, User , RoomMember} from '../model/index.model';
 import { IRoomMember } from '../types/RoomMember.interface';
 
 

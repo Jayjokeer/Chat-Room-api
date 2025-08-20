@@ -1,5 +1,4 @@
-import { Message } from '../model/message.model';
-import { User } from '../model/user.model';
+import { Message, User} from '../model/index.model';
 import { IMessage } from '../types/message.interface';
 
 

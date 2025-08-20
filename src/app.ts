@@ -28,7 +28,7 @@ app.all('/*splat', (req, res, next) => {
 app.use(globalErrorHandler); 
 const startServer = async () => {
   try {
-    await db.sync({ alter: true }); 
+    await db.sync({ alter: false}); 
     console.log('✅ Database synced');
     server.listen(process.env.PORT || 4000, () => {
       console.log(`Server running on port ${process.env.PORT || 4000}`);

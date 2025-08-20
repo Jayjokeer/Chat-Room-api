@@ -4,5 +4,5 @@ export interface IRoom {
     isPrivate?: boolean;
     inviteCode?: string;
     createdAt?: string;
-
+    createdBy?: string;
 }

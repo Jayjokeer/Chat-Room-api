@@ -11,19 +11,17 @@ export const userAuth = async (req: JwtPayload, res: Response, next: NextFunctio
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
       token = req.headers.authorization.split(' ')[1];
     }
-  
     if (!token) {
       throw new UnauthorizedError("Kindly login to access this route");
     }
   
     try {
       const decode = verifyJWT(token);
+ 
       if (!decode || !decode.email) {
         throw new UnauthorizedError("Authentication Failure");
       }
-  
-      const user = await await authService.checkEmailExists(decode.email.toLowerCase());
-      
+      const user = await authService.checkEmailExists(decode.email.toLowerCase());
       if (!user) {
         throw new UnauthorizedError("No user found");
       }

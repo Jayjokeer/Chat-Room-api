@@ -11,18 +11,6 @@ export class User extends Model<IUser> implements IUser {
   public email!: string;
   public password!: string;
   public createdAt!: string;
-
-  public static associate(models: any) {
-    User.belongsToMany(models.Room, {
-      through: "UserRooms",
-      foreignKey: "userId",
-    });
-
-    User.hasMany(models.Message, {
-      foreignKey: "userId",
-      as: "messages",
-    });
-  }
 }
 User.init(
   {

@@ -45,7 +45,7 @@ export const loginController = catchAsync( async (req: Request, res: Response) =
         throw new BadRequestError('Invalid email or password');
       }
   
-      const token =  generateJWTwithExpiryDate(user);
+      const token =  generateJWTwithExpiryDate({email: user.email, id: user.id, displayName: user.displayName});
   
       return successResponse(res, StatusCodes.OK, token);
 

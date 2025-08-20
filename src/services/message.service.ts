@@ -1,15 +1,21 @@
+import { Message } from '../model/message.model';
 import { User } from '../model/user.model';
+import { IMessage } from '../types/message.interface';
 
-export const checkEmailExists = async (email: string) => {
-  return await User.findOne({
-    where: { email },
+
+
+export const createMessage = async (messagePayload: IMessage) => {
+  return await Message.create(messagePayload);
+};
+
+export const fetchMessageById = async (id: string) => {
+  return await Message.findByPk(id);
+};
+
+export const getRoomMessages = async (roomId: string) => {
+  const messages = await Message.findAll({
+    where: { roomId: roomId },
+    include: [{ model: User, attributes: ['displayName'] }],
   });
-};
-
-export const createUser = async (userPayload: any) => {
-  return await User.create(userPayload);
-};
-
-export const fetchUserById = async (id: number) => {
-  return await User.findByPk(id);
+  return messages;
 };

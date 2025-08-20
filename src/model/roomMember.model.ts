@@ -8,6 +8,8 @@ export class RoomMember extends Model<IRoomMember> implements IRoomMember{
   public id!: string;
   public userId!: string;
   public roomId!: string;
+  public room?: Room;
+  public user?: User;
 }
 
 RoomMember.init(
